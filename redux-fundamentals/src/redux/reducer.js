@@ -1,5 +1,5 @@
-import todosReducer from "../components/todos/todosSlice"
-import filterReducer from "../components/filter/filterSlice"
+import todosReducer from "./slices/todos/todosSlice"
+import filterReducer from "./slices/filter/filterSlice"
 
 import { combineReducers } from 'redux'
 

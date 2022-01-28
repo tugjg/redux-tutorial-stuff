@@ -16,15 +16,16 @@ const todosReducer = (state = initialState, action) => {
             return [...state, {
                 id: nextTodoId(state),
                 text: action.payload,
-                completed: false
+                completed: false,
+                color: null
             }]
 
 
         case 'todos/delete':
             return state.filter(todo => todo.id !== action.payload)
 
-        case 'todos/deleteAll':
-            return [];
+        case 'todos/deleteCompleted':
+            return state.filter(todo => !todo.completed);
 
 
         case 'todos/toggle':
@@ -34,10 +35,19 @@ const todosReducer = (state = initialState, action) => {
                     : todo
             )
 
-        case 'todos/toggleAll':
+        case 'todos/completeAll':
             return state.map(todo => {
                 return { ...todo, completed: true }
             })
+
+
+        case 'todos/color':
+            return state.map(todo => {
+                return todo.id === action.payload.id
+                    ? { ...todo, color: action.payload.color }
+                    : todo
+            })
+
 
         default:
             return state;

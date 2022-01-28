@@ -1,0 +1,27 @@
+.todo-app {
+    width: 20rem;
+    margin: auto;
+}
+
+.app-header{
+    text-align: center;
+}
+
+.new-todo {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.filter {
+    border: 1px solid black;
+    margin: 1rem 0;
+    padding: 1rem
+}
+
+.footer {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}

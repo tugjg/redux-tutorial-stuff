@@ -5,7 +5,8 @@ const filterReducer = (state = initialState, action) => {
         case 'filter/status': {
             return {
                 ...state,
-                status: action.payload
+                status: state.status === action.payload ? null : action.payload
+
             }
         }
         case 'filter/color': {
